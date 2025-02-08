@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #ffebf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+        }
+        .chocolate-box {
+            width: 280px;
+            height: 200px;
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        }
+        .chocolate-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5);
+        }
+        .chocolate {
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(180deg, #6A4028, #8B5A2B);
+            border-radius: 10px;
+            position: absolute;
+            bottom: 20px;
+            box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5), 0px 4px 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 1.5s infinite alternate;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        .message {
+            font-size: 18px;
+            color: #b0266a;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: auto;
+            white-space: nowrap;
+        }
+        .chocolate-box.open + .message {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .heart {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1) translateX(-50%); }
+            50% { transform: scale(1.2) translateX(-50%); }
+            100% { transform: scale(1) translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chocolate-box" onclick="showMessage()">
+            <div class="heart">❤️</div>
+            <div class="chocolate">🍫</div>
+        </div>
+        <div class="message" id="proposal-message">You make my life sweeter!<div> > ❤️ I know I'm far away and can't give you real chocolate,</div> 
+        <div> but this is my small way of making your day special.</div>
+         <div>Next Valentine's, I'll make sure to bring you the best one! 💕🍫</div>
+    </div>
+    <script>
+        function showMessage() {
+            document.querySelector(".chocolate-box").classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
